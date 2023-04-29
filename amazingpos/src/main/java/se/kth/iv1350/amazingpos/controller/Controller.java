@@ -4,6 +4,7 @@ import se.kth.iv1350.amazingpos.integration.AccountingSystem;
 import se.kth.iv1350.amazingpos.integration.DiscountRegister;
 import se.kth.iv1350.amazingpos.integration.ExternalInventorySystem;
 import se.kth.iv1350.amazingpos.integration.Register;
+import se.kth.iv1350.amazingpos.model.CurItem;
 import se.kth.iv1350.amazingpos.model.ItemManager;
 import se.kth.iv1350.amazingpos.model.Sale;
 
@@ -19,12 +20,16 @@ public class Controller {
         this.disReg = new DiscountRegister();
         this.accSys = new AccountingSystem();
         this.register = new Register();
-        this.itmMnger = new ItemManager(exInSys);
     }
 
     /*Starts a new sale, this method must be called before doing anything else in a sale */
     public void startSale(){
         this.sale = new Sale();
+        this.itmMnger = new ItemManager(this.exInSys, this.sale);
         
     }
+    public CurItem scanItem(int quantity, int itemID){
+        return itmMnger.geItem(quantity, itemID);
+    }
+    
 }
