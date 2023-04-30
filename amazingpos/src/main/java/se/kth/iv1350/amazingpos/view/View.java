@@ -13,6 +13,7 @@ public class View {
         contr.startSale();
        CurItem scannedItem = contr.scanItem(0, 0);
        System.out.println(scannedItem.getRuningTotal());
+       double totalPrice = contr.endSale();
 
     }
 }

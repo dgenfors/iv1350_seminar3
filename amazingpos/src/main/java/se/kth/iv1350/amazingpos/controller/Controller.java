@@ -31,5 +31,17 @@ public class Controller {
     public CurItem scanItem(int quantity, int itemID){
         return itmMnger.geItem(quantity, itemID);
     }
+    public double endSale(){
+        return sale.getPrice();
+    }
+    public double payment(double amountPaid){
+        updateExternals(amountPaid);
+        return sale.pay(amountPaid);
+    }
+    private void updateExternals(double amountPaid){
+        exInSys.updateInventory(sale);
+        accSys.logSale(sale);
+        register.updateAmountInRegister(amountPaid);
+    }
     
 }

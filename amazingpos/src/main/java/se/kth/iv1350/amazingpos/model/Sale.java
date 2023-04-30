@@ -15,4 +15,15 @@ public class Sale {
         this.runingTotal =+payment.addVatRate(item);
         return new CurItem(item, this.runingTotal);
     }
+    public double getPrice(){
+        return this.runingTotal;
+    }
+    public double pay(double amount){
+        double change = calcChange(amount);
+        Receipt receipt = new Receipt(this, change, amount);
+        return change;
+    }
+    private double calcChange(double amountPaid){
+        return this.runingTotal-amountPaid;
+    }
 }
