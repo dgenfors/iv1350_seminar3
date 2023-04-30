@@ -14,6 +14,7 @@ public class View {
        CurItem scannedItem = contr.scanItem(0, 0);
        System.out.println(scannedItem.getRuningTotal());
        double totalPrice = contr.endSale();
+       double changeToGive = contr.payment(0);
 
     }
 }

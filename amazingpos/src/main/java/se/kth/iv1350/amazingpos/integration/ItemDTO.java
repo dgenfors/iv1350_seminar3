@@ -4,7 +4,15 @@ public class ItemDTO {
     private double price;
     private int vatRate;
     private String itemDesc;
+    private int itemID;
 
+    public ItemDTO(double price, int vatRate, String itemDesc, int itemID){
+        this.price = price;
+        this.vatRate = vatRate;
+        this.itemDesc = itemDesc;
+        this.itemID = itemID;
+
+    }
     public double getPrice(){
         return this.price;
     }
@@ -13,5 +21,8 @@ public class ItemDTO {
     }
     public String getItemDesc(){
         return this.itemDesc;
+    }
+    public int getItemID(){
+        return this.itemID;
     }
 }
