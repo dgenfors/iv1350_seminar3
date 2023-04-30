@@ -36,15 +36,13 @@ public class Sale {
     public double getPrice(){
         return this.runingTotal;
     }
-    public double pay(double amount){
-        double change = calcChange(amount);
-        Receipt receipt = new Receipt(this, change, amount);
+    public double pay(double amountPaid){
+        double change = payment.calcChange(amountPaid, this.runingTotal);
+        Receipt receipt = new Receipt(this, change, amountPaid);
         pntr.printSale(receipt);
         return change;
     }
-    private double calcChange(double amountPaid){
-        return amountPaid-this.runingTotal;
-    }
+
     private void increaseRuningTotal(ItemDTO item, int quantity){
         this.runingTotal +=(payment.addVatRate(item)*quantity);
     }
