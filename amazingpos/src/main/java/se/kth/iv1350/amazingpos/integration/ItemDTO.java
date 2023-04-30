@@ -2,11 +2,11 @@ package se.kth.iv1350.amazingpos.integration;
 
 public class ItemDTO {
     private double price;
-    private int vatRate;
+    private double vatRate;
     private String itemDesc;
     private int itemID;
 
-    public ItemDTO(double price, int vatRate, String itemDesc, int itemID){
+    public ItemDTO(double price, double vatRate, String itemDesc, int itemID){
         this.price = price;
         this.vatRate = vatRate;
         this.itemDesc = itemDesc;
@@ -16,7 +16,7 @@ public class ItemDTO {
     public double getPrice(){
         return this.price;
     }
-    public int getVatRate(){
+    public double getVatRate(){
         return this.vatRate;
     }
     public String getItemDesc(){

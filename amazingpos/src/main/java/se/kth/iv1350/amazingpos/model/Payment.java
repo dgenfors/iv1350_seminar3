@@ -6,6 +6,8 @@ public class Payment {
     private double priceVatIncl;
 
     public double addVatRate(ItemDTO item){
-        return this.priceVatIncl;
+        double itemVatRate = item.getVatRate();
+        double priceWithVat = (item.getPrice()*itemVatRate)+item.getPrice();
+        return priceWithVat;
     }
 }

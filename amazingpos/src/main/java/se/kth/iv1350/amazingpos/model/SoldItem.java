@@ -16,6 +16,6 @@ public class SoldItem {
         return this.quantity;
     }
     public void incrementQuantity(int quantity){
-        this.quantity =+ quantity;
+        this.quantity += quantity;
     }
 }

@@ -29,8 +29,8 @@ public class Sale {
         if(!foundItem){
             soldItems.add(new SoldItem(item, quantity));
         }
-        
-        increaseRuningTotal(item);
+
+        increaseRuningTotal(item, quantity);
         return new CurItem(item, this.runingTotal);
     }
     public double getPrice(){
@@ -39,12 +39,13 @@ public class Sale {
     public double pay(double amount){
         double change = calcChange(amount);
         Receipt receipt = new Receipt(this, change, amount);
+        pntr.printSale(receipt);
         return change;
     }
     private double calcChange(double amountPaid){
-        return this.runingTotal-amountPaid;
+        return amountPaid-this.runingTotal;
     }
-    private void increaseRuningTotal(ItemDTO item){
-        this.runingTotal =+payment.addVatRate(item);
+    private void increaseRuningTotal(ItemDTO item, int quantity){
+        this.runingTotal +=(payment.addVatRate(item)*quantity);
     }
 }

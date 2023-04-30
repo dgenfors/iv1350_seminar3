@@ -13,4 +13,7 @@ public class CurItem {
     public double getRuningTotal(){
         return this.runingTotal;
     }
+    public String getItemDesc(){
+        return this.item.getItemDesc();
+    }
 }

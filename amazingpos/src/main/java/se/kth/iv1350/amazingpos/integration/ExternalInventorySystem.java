@@ -23,8 +23,9 @@ public class ExternalInventorySystem {
 
     }
     public void addItems(){
-        items.add(new ItemDTO(50, 25, "lätt mjölk", 1));
-        items.add(new ItemDTO(25, 12, "banan", 2));
-        items.add(new ItemDTO(100, 6, "nötfärs", 3));
+        items.add(new ItemDTO(50, 0.25, "lätt mjölk", 1));
+        items.add(new ItemDTO(25, 0.12, "banan", 2));
+        items.add(new ItemDTO(100, 0.06, "nötfärs", 3));
+        items.add(new ItemDTO(30, 0.06, "kyckling", 4));
     }
 }
