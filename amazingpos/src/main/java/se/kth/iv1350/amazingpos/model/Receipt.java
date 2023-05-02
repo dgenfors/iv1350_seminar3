@@ -25,6 +25,7 @@ public class Receipt {
     @Override
     public String toString(){
         StringBuilder builder = new StringBuilder();
+        builder.append("Date:" +timeOfSale.getSaleDate()+","+"Time:"+timeOfSale.getSaleTime()+"\n");
         for(SoldItem solditem : sale.getSoldItems()){
             builder.append(solditem.getItem().getItemDesc()+","+solditem.getItem().getPrice()+","+"Quantity:"+solditem.getQuantity() +"\n" );
         }
