@@ -1,16 +1,13 @@
 package se.kth.iv1350.amazingpos.view;
 
-import java.util.Random;
 
 import se.kth.iv1350.amazingpos.controller.Controller;
 import se.kth.iv1350.amazingpos.model.CurItem;
 
 public class View {
     private Controller contr;
-    private Random rndm;
     public View(Controller contr){
         this.contr = contr;
-        this.rndm = new Random();
     }
 
     public void runFakeExecution(){
