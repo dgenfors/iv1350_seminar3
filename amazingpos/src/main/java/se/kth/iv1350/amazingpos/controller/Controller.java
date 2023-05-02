@@ -32,7 +32,7 @@ public class Controller {
         return itmMnger.geItem(quantity, itemID);
     }
     public double endSale(){
-        return sale.getPrice();
+        return sale.getPriceWithVat();
     }
     public double payment(double amountPaid){
         updateExternals(amountPaid);

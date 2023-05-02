@@ -21,4 +21,16 @@ public class Receipt {
     public double getAmountPaid(){
         return this.amountPaid;
     }
+
+    @Override
+    public String toString(){
+        StringBuilder builder = new StringBuilder();
+        for(SoldItem solditem : sale.getSoldItems()){
+            builder.append(solditem.getItem().getItemDesc()+","+solditem.getItem().getPrice()+","+"Quantity:"+solditem.getQuantity() +"\n" );
+        }
+        builder.append("Totala Priset:"+ sale.getPriceWithVat()+"\n");
+        builder.append("Vat:"+(sale.getPriceWithVat()-sale.getPriceWithoutVat()));
+        
+        return builder.toString();
+    }
 }

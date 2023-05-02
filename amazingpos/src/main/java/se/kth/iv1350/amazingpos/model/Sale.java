@@ -10,6 +10,7 @@ public class Sale {
     private Printer pntr;
     private Payment payment;
     private double runingTotal;
+    private double priceWithoutVat;
     private List<SoldItem> soldItems = new ArrayList<>();
     public Sale(){
         this.pntr = new Printer();
@@ -29,12 +30,18 @@ public class Sale {
         if(!foundItem){
             soldItems.add(new SoldItem(item, quantity));
         }
-
+        this.priceWithoutVat += item.getPrice()*quantity;
         increaseRuningTotal(item, quantity);
         return new CurItem(item, this.runingTotal);
     }
-    public double getPrice(){
+    public double getPriceWithVat(){
         return this.runingTotal;
+    }
+    public List<SoldItem> getSoldItems(){
+        return this.soldItems;
+    }
+    public double getPriceWithoutVat(){
+        return this.priceWithoutVat;
     }
     public double pay(double amountPaid){
         double change = payment.calcChange(amountPaid, this.runingTotal);

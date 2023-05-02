@@ -23,7 +23,7 @@ public class View {
        double totalPrice = contr.endSale();
        System.out.println(totalPrice);
        double changeToGive = contr.payment(440);
-       System.out.println(changeToGive);
+       System.out.println("Change to give :"+changeToGive);
 
     }
 }
