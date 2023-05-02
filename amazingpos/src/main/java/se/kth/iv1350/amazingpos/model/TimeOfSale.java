@@ -6,7 +6,6 @@ import java.time.LocalTime;
 public class TimeOfSale {
     private LocalTime saleTime;
     private LocalDate saleDate;
-    private int timeOfSale;
     public TimeOfSale(){
         this.saleTime = LocalTime.now();
         this.saleDate = LocalDate.now();

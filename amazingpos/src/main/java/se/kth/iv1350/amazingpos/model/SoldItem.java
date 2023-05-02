@@ -5,13 +5,9 @@ import se.kth.iv1350.amazingpos.integration.ItemDTO;
 public class SoldItem {
     private ItemDTO item;
     private int quantity;
-    private double priceAfterVat;
     public SoldItem(ItemDTO item, int quantity){
         this.item = item;
         this.quantity = quantity;
-    }
-    public void setPriceWithVat(double priceAfterVat){
-        this.priceAfterVat = priceAfterVat;
     }
     public ItemDTO getItem(){
         return this.item;
