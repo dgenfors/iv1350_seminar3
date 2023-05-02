@@ -18,7 +18,7 @@ public class View {
        
        for(int i = 1; i < 4; i++){
         CurItem scannedItem = contr.scanItem(5-i, 5-i);
-        System.out.println(scannedItem.getItemDesc()+" "+scannedItem.getRuningTotal());
+        System.out.println(scannedItem.getItemDesc()+", "+scannedItem.getItemPrice()+", "+scannedItem.getRuningTotal());
        }
        double totalPrice = contr.endSale();
        System.out.println(totalPrice);

@@ -16,4 +16,7 @@ public class CurItem {
     public String getItemDesc(){
         return this.item.getItemDesc();
     }
+    public double getItemPrice(){
+        return this.item.getPrice();
+    }
 }
