@@ -30,7 +30,9 @@ public class Receipt {
             builder.append(solditem.getItem().getItemDesc()+","+solditem.getItem().getPrice()+","+"Quantity:"+solditem.getQuantity() +"\n" );
         }
         builder.append("Totala Priset:"+ sale.getPriceWithVat()+"\n");
-        builder.append("Vat:"+(sale.getPriceWithVat()-sale.getPriceWithoutVat()));
+        builder.append("Vat:"+(sale.getPriceWithVat()-sale.getPriceWithoutVat())+"\n");
+        builder.append("Amount paid:" +amountPaid+",");
+        builder.append("Change:" +change);
         
         return builder.toString();
     }

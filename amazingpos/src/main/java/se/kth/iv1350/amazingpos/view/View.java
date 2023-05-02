@@ -17,12 +17,12 @@ public class View {
         contr.startSale();
        
        for(int i = 1; i < 4; i++){
-        CurItem scannedItem = contr.scanItem(i, i);
+        CurItem scannedItem = contr.scanItem(5-i, 5-i);
         System.out.println(scannedItem.getItemDesc()+" "+scannedItem.getRuningTotal());
        }
        double totalPrice = contr.endSale();
        System.out.println(totalPrice);
-       double changeToGive = contr.payment(440);
+       double changeToGive = contr.payment(550);
        System.out.println("Change to give :"+changeToGive);
 
     }
