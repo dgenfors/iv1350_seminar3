@@ -1,13 +1,21 @@
 package se.kth.iv1350.amazingpos.model;
 
 
-
+/*
+ * Represents a receipt of a sale
+ */
 public class Receipt {
     private double change;
     private double amountPaid;
     private Sale sale;
     private TimeOfSale timeOfSale;
-    
+    /**
+     * Creates a instance containing a Sale and the amount paid
+     * and change of the sale. Also sets the data and time of the sale
+     * @param the sale to be presented by the new instance
+     * @param the change to be presented by the new instance
+     * @param the amount paid to be presented by the new instance
+     */
     public Receipt(Sale sale, double change, double amountPaid){
         this.change = change;
         this.amountPaid = amountPaid;
@@ -15,14 +23,26 @@ public class Receipt {
         this.timeOfSale = new TimeOfSale();
         
     }
+    /**
+     * 
+     * @return the Change in the Receipt
+     */
     public double getChange(){
         return this.change;
     }
+    /**
+     * 
+     * @return the amount Paid in the Receipt
+     */
     public double getAmountPaid(){
         return this.amountPaid;
     }
-
+    
     @Override
+    /**
+     * Creates a string For the Receipt
+     * @return a String for the receipt 
+     */
     public String toString(){
         StringBuilder builder = new StringBuilder();
         builder.append("Date:" +timeOfSale.getSaleDate()+","+"Time:"+timeOfSale.getSaleTime()+"\n");

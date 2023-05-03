@@ -5,18 +5,29 @@ import java.util.List;
 
 import se.kth.iv1350.amazingpos.integration.ItemDTO;
 import se.kth.iv1350.amazingpos.integration.Printer;
-
+/**
+ * Represents a instance of a Sale.
+ */
 public class Sale {
     private Printer pntr;
     private Payment payment;
     private double runingTotal;
     private double priceWithoutVat;
     private List<SoldItem> soldItems = new ArrayList<>();
+    /**
+     * Creates a instance of a sale
+     */
     public Sale(){
         this.pntr = new Printer();
         this.payment = new Payment();
         this.runingTotal = 0;
     }
+    /**
+     * Adds the item and its quantity to the instance
+     * @param the item to be added
+     * @param the quantity of the item
+     * @return the item and the current runingtotal of the Sale
+     */
     public CurItem additem(ItemDTO item, int quantity){
         boolean foundItem = false;
         for(int i = 0; i<soldItems.size(); i++){

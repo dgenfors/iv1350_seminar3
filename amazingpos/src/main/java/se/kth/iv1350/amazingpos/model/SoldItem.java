@@ -1,10 +1,17 @@
 package se.kth.iv1350.amazingpos.model;
 
 import se.kth.iv1350.amazingpos.integration.ItemDTO;
-
+/**
+ * Represents a instance of a SoldItem
+ */
 public class SoldItem {
     private ItemDTO item;
     private int quantity;
+    /**
+     * creates a instance of the object with the sold item and amount bought
+     * @param A sold item
+     * @param the amount bought of the item.
+     */
     public SoldItem(ItemDTO item, int quantity){
         this.item = item;
         this.quantity = quantity;
