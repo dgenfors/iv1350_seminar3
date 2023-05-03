@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: se.kth.iv1350.amazingpos.model.SaleTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 0.011 s <<< FAILURE! - in se.kth.iv1350.amazingpos.model.SaleTest
+testPay  Time elapsed: 0.007 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at se.kth.iv1350.amazingpos.model.SaleTest.testPay(SaleTest.java:85)
+
+testGetSoldItems  Time elapsed: 0.002 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <null> but was: <[]>
+	at se.kth.iv1350.amazingpos.model.SaleTest.testGetSoldItems(SaleTest.java:60)
+
+testGetPriceWithoutVat  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at se.kth.iv1350.amazingpos.model.SaleTest.testGetPriceWithoutVat(SaleTest.java:73)
+

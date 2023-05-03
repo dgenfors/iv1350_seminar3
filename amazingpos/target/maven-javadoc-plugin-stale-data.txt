@@ -1,0 +1,49 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-protected
+-source
+'15'
+-sourcepath
+'C:/Users/davve/iv1350_seminar3/amazingpos/src/main/java'
+-author
+-bottom
+'Copyright &#169; 2023. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'C:/Users/davve/iv1350_seminar3/amazingpos/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'amazingpos 1.0-SNAPSHOT API'
+-linkoffline
+'https://docs.oracle.com/en/java/javase/15/docs/api' 'C:/Users/davve/iv1350_seminar3/amazingpos/target/javadoc-bundle-options'
+-use
+-version
+-windowtitle
+'amazingpos 1.0-SNAPSHOT API'
+se.kth.iv1350.amazingpos.controller
+se.kth.iv1350.amazingpos.integration
+se.kth.iv1350.amazingpos.model
+se.kth.iv1350.amazingpos.startup
+se.kth.iv1350.amazingpos.view
+C:\Users\davve\iv1350_seminar3\amazingpos\src\main\java = 1683053128682
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\allclasses-index.html = 1683145185695
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\allpackages-index.html = 1683145185697
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\element-list = 1683145185560
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\help-doc.html = 1683145185725
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\index-all.html = 1683145185717
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\index.html = 1683145185678
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\jquery-ui.overrides.css = 1683145185753
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\member-search-index.js = 1683145185702
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\module-search-index.js = 1683145185698
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\overview-summary.html = 1683145185719
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\overview-tree.html = 1683145185674
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\package-search-index.js = 1683145185700
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\script.js = 1683145185729
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\search.js = 1683145185731
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\stylesheet.css = 1683145185728
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\tag-search-index.js = 1683145185703
+C:\Users\davve\iv1350_seminar3\amazingpos\target\site\apidocs\type-search-index.js = 1683145185701

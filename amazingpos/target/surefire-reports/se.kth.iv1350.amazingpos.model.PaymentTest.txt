@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: se.kth.iv1350.amazingpos.model.PaymentTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 1, Skipped: 0, Time elapsed: 0.001 s <<< FAILURE! - in se.kth.iv1350.amazingpos.model.PaymentTest
+testCalcChange  Time elapsed: 0 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: The test case is a prototype.
+	at se.kth.iv1350.amazingpos.model.PaymentTest.testCalcChange(PaymentTest.java:63)
+
+testAddVatRate  Time elapsed: 0 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.amazingpos.integration.ItemDTO.getVatRate()" because "item" is null
+	at se.kth.iv1350.amazingpos.model.PaymentTest.testAddVatRate(PaymentTest.java:47)
+

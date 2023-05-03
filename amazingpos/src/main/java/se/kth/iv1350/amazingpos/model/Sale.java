@@ -24,8 +24,8 @@ public class Sale {
     }
     /**
      * Adds the item and its quantity to the instance
-     * @param the item to be added
-     * @param the quantity of the item
+     * @param item  The item to be added
+     * @param quantity  The quantity of the item
      * @return the item and the current runingtotal of the Sale
      */
     public CurItem additem(ItemDTO item, int quantity){

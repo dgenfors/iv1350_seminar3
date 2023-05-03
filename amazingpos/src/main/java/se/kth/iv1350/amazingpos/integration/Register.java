@@ -7,7 +7,7 @@ public class Register {
     
     /** 
      * Adds the amount in the object with the amountPaid.
-     * @param amount paid in the last sale
+     * @param amountPaid in the last sale
      */
     public void updateAmountInRegister(double amountPaid){
         this.amountInRegister += amountPaid;

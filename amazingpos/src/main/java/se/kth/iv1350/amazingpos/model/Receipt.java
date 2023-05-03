@@ -12,9 +12,9 @@ public class Receipt {
     /**
      * Creates a instance containing a Sale and the amount paid
      * and change of the sale. Also sets the data and time of the sale
-     * @param the sale to be presented by the new instance
-     * @param the change to be presented by the new instance
-     * @param the amount paid to be presented by the new instance
+     * @param sale to be presented by the new instance
+     * @param change The change to be given after payment
+     * @param amountPaid the amount Paid by the user
      */
     public Receipt(Sale sale, double change, double amountPaid){
         this.change = change;

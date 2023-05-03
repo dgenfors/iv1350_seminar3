@@ -8,7 +8,7 @@ import se.kth.iv1350.amazingpos.model.Sale;
 public class AccountingSystem {
     /**
      * Updates the Accounting System with the sale information
-     * @param the sale information to be used to update the Accounting System.
+     * @param sale information to be used to update the Accounting System.
      */
     public void logSale(Sale sale){
         

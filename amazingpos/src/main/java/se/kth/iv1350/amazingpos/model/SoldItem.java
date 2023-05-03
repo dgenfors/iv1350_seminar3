@@ -9,8 +9,8 @@ public class SoldItem {
     private int quantity;
     /**
      * creates a instance of the object with the sold item and amount bought
-     * @param A sold item
-     * @param the amount bought of the item.
+     * @param item A sold item
+     * @param quantity  The amount bought of the item.
      */
     public SoldItem(ItemDTO item, int quantity){
         this.item = item;

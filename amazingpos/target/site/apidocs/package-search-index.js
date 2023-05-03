@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"se.kth.iv1350.amazingpos.controller"},{"l":"se.kth.iv1350.amazingpos.integration"},{"l":"se.kth.iv1350.amazingpos.model"},{"l":"se.kth.iv1350.amazingpos.startup"},{"l":"se.kth.iv1350.amazingpos.view"}];updateSearchResults();
