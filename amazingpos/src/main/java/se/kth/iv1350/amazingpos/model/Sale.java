@@ -45,15 +45,34 @@ public class Sale {
         increaseRuningTotal(item, quantity);
         return new CurItem(item, this.runingTotal);
     }
+    /**
+     * 
+     * @return The runingTotal price of the sale with Vat included
+     */
     public double getPriceWithVat(){
         return this.runingTotal;
     }
+    /**
+     * 
+     * @return The list of sold Items in the sale
+     */
     public List<SoldItem> getSoldItems(){
         return this.soldItems;
     }
+    /**
+     * 
+     * @return The runingTotal of the sale without Vat.
+     */
     public double getPriceWithoutVat(){
         return this.priceWithoutVat;
     }
+    /**
+     * Calculates the change to be given and creates a receipt object which 
+     * is then sent to Printer to be used there
+     *
+     * @param amountPaid The amountPaid by the customer.
+     * @return The change to be given.
+     */
     public double pay(double amountPaid){
         double change = payment.calcChange(amountPaid, this.runingTotal);
         Receipt receipt = new Receipt(this, change, amountPaid);

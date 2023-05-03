@@ -17,6 +17,13 @@ public class ItemManager{
     this.exInSys = exInSys;
     this.sale = sale;
  }
+ /**
+  * Calls the Externalinvetory to get the item with that matching id 
+  * To then call Sale to add the item and the quantity to the on going sale.
+  * @param quantity the number of items
+  * @param itemID the itemID scanned, used to get the matching Item
+  * @return
+  */
  public CurItem geItem(int quantity, int itemID){
    ItemDTO item = exInSys.getItemDescription(itemID);
    return sale.additem(item,quantity);

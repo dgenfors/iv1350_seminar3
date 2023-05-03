@@ -16,12 +16,24 @@ public class SoldItem {
         this.item = item;
         this.quantity = quantity;
     }
+    /**
+     * 
+     * @return The sold item
+     */
     public ItemDTO getItem(){
         return this.item;
     }
+    /**
+     * 
+     * @return The quantity of the sold item.
+     */
     public int getQuantity(){
         return this.quantity;
     }
+    /**
+     * Increases the quantity of the sold item.
+     * @param quantity The quantity to increment the amount of sold items.
+     */
     public void incrementQuantity(int quantity){
         this.quantity += quantity;
     }
