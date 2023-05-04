@@ -39,9 +39,10 @@ public class SaleTest {
     public void testPriceAfterAddingItem() {
         
         int quantity = 1;
-        CurItem expResult = new CurItem(item, 62.5);
-        CurItem result = sale.additem(item, quantity);
-        assertEquals(expResult.getRuningTotal(), result.getRuningTotal(),"RuningTotal was not equal");
+        double expResult = 62.5;
+        sale.additem(item, quantity);
+        double result = sale.getPriceWithVat();
+        assertEquals(expResult, result,"RuningTotal was not equal");
     }
 
     @Test
@@ -58,7 +59,6 @@ public class SaleTest {
         List<SoldItem> expResult = new ArrayList<>();
         List<SoldItem> result = sale.getSoldItems();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
         assertEquals(expResult, result,"Same instance did not equal");
     }
     @Test

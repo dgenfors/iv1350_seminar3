@@ -17,21 +17,13 @@ import se.kth.iv1350.amazingpos.integration.ItemDTO;
  * @author davve
  */
 public class PaymentTest {
-    
-    public PaymentTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
+    private ItemDTO item;
+    private Payment payment;
     
     @BeforeEach
     public void setUp() {
-        
+        item = new ItemDTO(100, 0.12, "lätt mjölk", 1);
+        payment = new Payment();
     }
     
     @AfterEach
@@ -40,27 +32,20 @@ public class PaymentTest {
 
     @Test
     public void testAddVatRate() {
-        System.out.println("addVatRate");
-        ItemDTO item = null;
-        Payment instance = new Payment();
-        double expResult = 0.0;
-        double result = instance.addVatRate(item);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double expResult = 112;
+        double result = payment.addVatRate(item);
+        assertEquals(expResult, result, "calculation gave a faulty value");
+        
     }
 
     @Test
     public void testCalcChange() {
-        System.out.println("calcChange");
-        double amountPaid = 0.0;
-        double runingTotal = 0.0;
-        Payment instance = new Payment();
-        double expResult = 0.0;
-        double result = instance.calcChange(amountPaid, runingTotal);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double amountPaid = 120;
+        double runingTotal = 100;
+       
+        double expResult = amountPaid-runingTotal;
+        double result = payment.calcChange(amountPaid, runingTotal);
+        assertEquals(expResult, result, "Subraction gave a faulty value");
     }
     
 }

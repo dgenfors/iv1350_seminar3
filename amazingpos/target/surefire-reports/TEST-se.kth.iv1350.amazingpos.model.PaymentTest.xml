@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.amazingpos.model.PaymentTest" time="0.001" tests="2" errors="1" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.amazingpos.model.PaymentTest" time="0.001" tests="2" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="SE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\davve\AppData\Local\Temp\surefire1722717846548038616\surefirebooter11894737046475545687.jar C:\Users\davve\AppData\Local\Temp\surefire1722717846548038616 2023-05-04T17-22-13_346-jvmRun1 surefire8499796092948024663tmp surefire_011399304351654141580tmp"/>
+    <property name="sun.java.command" value="C:\Users\davve\AppData\Local\Temp\surefire7589008872086605314\surefirebooter13808102387701996925.jar C:\Users\davve\AppData\Local\Temp\surefire7589008872086605314 2023-05-04T19-11-30_104-jvmRun1 surefire1979168949364811696tmp surefire_012546487056308260242tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\davve\iv1350_seminar3\amazingpos\target\test-classes;C:\Users\davve\iv1350_seminar3\amazingpos\target\classes;C:\Users\davve\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\davve\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\davve\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\davve\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\davve\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\davve\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\davve\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\davve\AppData\Local\Temp\surefire1722717846548038616\surefirebooter11894737046475545687.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\davve\AppData\Local\Temp\surefire7589008872086605314\surefirebooter13808102387701996925.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
@@ -57,18 +57,6 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testCalcChange" classname="se.kth.iv1350.amazingpos.model.PaymentTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at se.kth.iv1350.amazingpos.model.PaymentTest.testCalcChange(PaymentTest.java:63)
-</failure>
-    <system-out><![CDATA[calcChange
-]]></system-out>
-  </testcase>
-  <testcase name="testAddVatRate" classname="se.kth.iv1350.amazingpos.model.PaymentTest" time="0">
-    <error message="Cannot invoke &quot;se.kth.iv1350.amazingpos.integration.ItemDTO.getVatRate()&quot; because &quot;item&quot; is null" type="java.lang.NullPointerException">java.lang.NullPointerException: Cannot invoke "se.kth.iv1350.amazingpos.integration.ItemDTO.getVatRate()" because "item" is null
-	at se.kth.iv1350.amazingpos.model.PaymentTest.testAddVatRate(PaymentTest.java:47)
-</error>
-    <system-out><![CDATA[addVatRate
-]]></system-out>
-  </testcase>
+  <testcase name="testCalcChange" classname="se.kth.iv1350.amazingpos.model.PaymentTest" time="0"/>
+  <testcase name="testAddVatRate" classname="se.kth.iv1350.amazingpos.model.PaymentTest" time="0"/>
 </testsuite>
