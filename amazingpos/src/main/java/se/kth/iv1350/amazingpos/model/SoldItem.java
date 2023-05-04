@@ -17,14 +17,14 @@ public class SoldItem {
         this.quantity = quantity;
     }
     /**
-     * 
+     * Get the sold item
      * @return The sold item
      */
     public ItemDTO getItem(){
         return this.item;
     }
     /**
-     * 
+     * get the quantity of the sold item
      * @return The quantity of the sold item.
      */
     public int getQuantity(){

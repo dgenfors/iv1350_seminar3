@@ -24,14 +24,14 @@ public class Receipt {
         
     }
     /**
-     * 
+     * Get the change 
      * @return the Change in the Receipt
      */
     public double getChange(){
         return this.change;
     }
     /**
-     * 
+     * Get the amount paid
      * @return the amount Paid in the Receipt
      */
     public double getAmountPaid(){

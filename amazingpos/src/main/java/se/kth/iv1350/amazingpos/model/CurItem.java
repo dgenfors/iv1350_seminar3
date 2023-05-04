@@ -14,19 +14,21 @@ public class CurItem {
     }
     
     /** 
+     * Get the runingTotal of the sale
      * @return the runingtotal of this object.
      */
     public double getRuningTotal(){
         return this.runingTotal;
     }
     /**
+     * Get the item description
      * @return The itemDescription of the item in this object.
      */
     public String getItemDesc(){
         return this.item.getItemDesc();
     }
     /**
-     * 
+     * Get the price of the item
      * @return The price of the item.
      */
     public double getItemPrice(){

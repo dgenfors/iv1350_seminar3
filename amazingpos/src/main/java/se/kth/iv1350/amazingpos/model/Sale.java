@@ -46,22 +46,22 @@ public class Sale {
         return new CurItem(item, this.runingTotal);
     }
     /**
-     * 
-     * @return The runingTotal price of the sale with Vat included
+     * Get the Price with vat included
+     * @return The price of the sale with Vat included
      */
     public double getPriceWithVat(){
         return this.runingTotal;
     }
     /**
-     * 
+     * Get the list of sold items in the sale
      * @return The list of sold Items in the sale
      */
     public List<SoldItem> getSoldItems(){
         return this.soldItems;
     }
     /**
-     * 
-     * @return The runingTotal of the sale without Vat.
+     * get the Price without vat included
+     * @return The Price of the sale without Vat.
      */
     public double getPriceWithoutVat(){
         return this.priceWithoutVat;

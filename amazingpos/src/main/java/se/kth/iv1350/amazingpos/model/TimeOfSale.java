@@ -18,15 +18,15 @@ public class TimeOfSale {
         
     }
     /**
-     * 
-     * @return the Time of creation of the object
+     * Get the time of sale
+     * @return the Time of sale
      */
     public LocalTime getSaleTime(){
         return this.saleTime;
     }
     /**
-     * 
-     * @return the data of creation of the object
+     * Get the date of sale
+     * @return The date of the sale
      */
     public LocalDate getSaleDate(){
         return this.saleDate;
