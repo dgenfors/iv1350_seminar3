@@ -76,7 +76,7 @@ public class Sale {
     public double pay(double amountPaid){
         double change = payment.calcChange(amountPaid, this.runingTotal);
         Receipt receipt = new Receipt(this, change, amountPaid);
-        pntr.printSale(receipt);
+        pntr.printReceipt(receipt);
         return change;
     }
 
