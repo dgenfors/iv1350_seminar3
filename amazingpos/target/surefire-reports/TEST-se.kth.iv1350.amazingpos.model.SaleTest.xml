@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.amazingpos.model.SaleTest" time="0.011" tests="5" errors="0" skipped="0" failures="3">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="se.kth.iv1350.amazingpos.model.SaleTest" time="0.01" tests="7" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.cpu.isalist" value="amd64"/>
@@ -15,7 +15,7 @@
     <property name="user.country" value="SE"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-17.0.1\bin"/>
-    <property name="sun.java.command" value="C:\Users\davve\AppData\Local\Temp\surefire1865037149676791107\surefirebooter11644286279512949943.jar C:\Users\davve\AppData\Local\Temp\surefire1865037149676791107 2023-05-03T22-46-31_166-jvmRun1 surefire7152771707316470295tmp surefire_04375406196873880112tmp"/>
+    <property name="sun.java.command" value="C:\Users\davve\AppData\Local\Temp\surefire1722717846548038616\surefirebooter11894737046475545687.jar C:\Users\davve\AppData\Local\Temp\surefire1722717846548038616 2023-05-04T17-22-13_346-jvmRun1 surefire8499796092948024663tmp surefire_011399304351654141580tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Users\davve\iv1350_seminar3\amazingpos\target\test-classes;C:\Users\davve\iv1350_seminar3\amazingpos\target\classes;C:\Users\davve\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.6.0\junit-jupiter-api-5.6.0.jar;C:\Users\davve\.m2\repository\org\apiguardian\apiguardian-api\1.1.0\apiguardian-api-1.1.0.jar;C:\Users\davve\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\davve\.m2\repository\org\junit\platform\junit-platform-commons\1.6.0\junit-platform-commons-1.6.0.jar;C:\Users\davve\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.6.0\junit-jupiter-params-5.6.0.jar;C:\Users\davve\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.6.0\junit-jupiter-engine-5.6.0.jar;C:\Users\davve\.m2\repository\org\junit\platform\junit-platform-engine\1.6.0\junit-platform-engine-1.6.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\davve\AppData\Local\Temp\surefire1865037149676791107\surefirebooter11644286279512949943.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\davve\AppData\Local\Temp\surefire1722717846548038616\surefirebooter11894737046475545687.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>
@@ -57,31 +57,11 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="testAdditem" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0"/>
-  <testcase name="testPay" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0.007">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at se.kth.iv1350.amazingpos.model.SaleTest.testPay(SaleTest.java:85)
-</failure>
-    <system-out><![CDATA[pay
-Date:2023-05-03,Time:22:46:31.738497
-Totala Priset:0.0
-Vat:0.0
-Amount paid:0.0,Change:0.0
-]]></system-out>
-  </testcase>
-  <testcase name="testGetSoldItems" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0.002">
-    <failure message="expected: &lt;null&gt; but was: &lt;[]&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <null> but was: <[]>
-	at se.kth.iv1350.amazingpos.model.SaleTest.testGetSoldItems(SaleTest.java:60)
-]]></failure>
-    <system-out><![CDATA[getSoldItems
-]]></system-out>
-  </testcase>
-  <testcase name="testGetPriceWithoutVat" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0">
-    <failure message="The test case is a prototype." type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: The test case is a prototype.
-	at se.kth.iv1350.amazingpos.model.SaleTest.testGetPriceWithoutVat(SaleTest.java:73)
-</failure>
-    <system-out><![CDATA[getPriceWithoutVat
-]]></system-out>
-  </testcase>
-  <testcase name="testGetPriceWithVat" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0"/>
+  <testcase name="testPriceAfterAddingItem" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0"/>
+  <testcase name="testPay" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0.007"/>
+  <testcase name="testGetSoldItemsFilledList" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0"/>
+  <testcase name="testAddSameItem" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0.001"/>
+  <testcase name="testGetPriceWithoutVat" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0"/>
+  <testcase name="testGetPriceWithVat" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0.001"/>
+  <testcase name="testGetSoldItemsEmptyList" classname="se.kth.iv1350.amazingpos.model.SaleTest" time="0"/>
 </testsuite>

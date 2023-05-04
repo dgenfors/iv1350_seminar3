@@ -4,6 +4,7 @@
  */
 package se.kth.iv1350.amazingpos.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.AfterAll;
@@ -20,11 +21,13 @@ import se.kth.iv1350.amazingpos.integration.ItemDTO;
 public class SaleTest {
     private Sale sale;
     private ItemDTO item;
+    private SoldItem soldItem;
 
     @BeforeEach
     public void setUp() {
         sale = new Sale();
         item = new ItemDTO(50, 0.25, "lätt mjölk", 1);
+        soldItem = new SoldItem(item, 3);
     }
     
     @AfterEach
@@ -33,56 +36,68 @@ public class SaleTest {
     }
 
     @Test
-    public void testAdditem() {
-        System.out.println("additem");
+    public void testPriceAfterAddingItem() {
+        
         int quantity = 1;
         CurItem expResult = new CurItem(item, 62.5);
         CurItem result = sale.additem(item, quantity);
-        assertEquals(expResult.getRuningTotal(), result.getRuningTotal());
+        assertEquals(expResult.getRuningTotal(), result.getRuningTotal(),"RuningTotal was not equal");
     }
 
     @Test
     public void testGetPriceWithVat() {
-        System.out.println("getPriceWithVat");
         sale.additem(item, 4);
         double expResult = 250;
         double result = sale.getPriceWithVat();
-        assertEquals(expResult, result);
+        assertEquals(expResult, result,"Vat calculation did not equal");
  
     }
 
     @Test
-    public void testGetSoldItems() {
-        System.out.println("getSoldItems");
-        Sale instance = new Sale();
-        List<SoldItem> expResult = null;
-        List<SoldItem> result = instance.getSoldItems();
+    public void testGetSoldItemsEmptyList() {
+        List<SoldItem> expResult = new ArrayList<>();
+        List<SoldItem> result = sale.getSoldItems();
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        assertEquals(expResult, result,"Same instance did not equal");
+    }
+    @Test
+    public void testGetSoldItemsFilledList() {
+        List<SoldItem> list = new ArrayList<>();
+        list.add(soldItem);
+        sale.additem(item, 3);
+        List<SoldItem> classList = sale.getSoldItems();
+        ItemDTO result =classList.get(0).getItem();
+        ItemDTO expResult = list.get(0).getItem();
+        assertEquals(expResult, result,"Same instance did not equal");
     }
 
     @Test
     public void testGetPriceWithoutVat() {
-        System.out.println("getPriceWithoutVat");
-        Sale instance = new Sale();
-        double expResult = 0.0;
-        double result = instance.getPriceWithoutVat();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        sale.additem(item, 4);
+        double expResult = 200;
+        double result = sale.getPriceWithoutVat();
+        assertEquals(expResult, result,"Price calculation failed");
     }
 
     @Test
     public void testPay() {
-        System.out.println("pay");
-        double amountPaid = 0.0;
-        Sale instance = new Sale();
-        double expResult = 0.0;
-        double result = instance.pay(amountPaid);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        double amountPaid = 150;
+        double expResult = 25;
+        sale.additem(item, 2);
+        double result = sale.pay(amountPaid);
+        assertEquals(expResult, result, "Faulty calculation for the change");
+        
+    }
+    @Test
+    public void testAddSameItem() {
+        sale.additem(item, 2);
+        sale.additem(item, 3);
+        int expResult = 5;
+        List<SoldItem>soldItems= sale.getSoldItems();
+        int result = soldItems.get(0).getQuantity();
+        assertEquals(expResult, result, "Wrong quantity added for the same item");
+        
     }
     
 }
