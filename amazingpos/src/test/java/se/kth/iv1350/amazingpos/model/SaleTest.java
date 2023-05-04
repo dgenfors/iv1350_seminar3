@@ -21,12 +21,14 @@ import se.kth.iv1350.amazingpos.integration.ItemDTO;
 public class SaleTest {
     private Sale sale;
     private ItemDTO item;
+    private ItemDTO item2;
     private SoldItem soldItem;
 
     @BeforeEach
     public void setUp() {
         sale = new Sale();
         item = new ItemDTO(50, 0.25, "lätt mjölk", 1);
+        item2 = new ItemDTO(30, 0.12, "chips", 2);
         soldItem = new SoldItem(item, 3);
     }
     
@@ -36,11 +38,21 @@ public class SaleTest {
     }
 
     @Test
-    public void testPriceAfterAddingItem() {
+    public void testPriceAfterAddingOneItem() {
         
         int quantity = 1;
         double expResult = 62.5;
         sale.additem(item, quantity);
+        double result = sale.getPriceWithVat();
+        assertEquals(expResult, result,"RuningTotal was not equal");
+    }
+    @Test
+    public void testPriceAfterAddingMutipleItem() {
+        
+        int quantity = 2;
+        double expResult = 192.2;
+        sale.additem(item, quantity);
+        sale.additem(item2, quantity);
         double result = sale.getPriceWithVat();
         assertEquals(expResult, result,"RuningTotal was not equal");
     }
@@ -58,7 +70,6 @@ public class SaleTest {
     public void testGetSoldItemsEmptyList() {
         List<SoldItem> expResult = new ArrayList<>();
         List<SoldItem> result = sale.getSoldItems();
-        assertEquals(expResult, result);
         assertEquals(expResult, result,"Same instance did not equal");
     }
     @Test
