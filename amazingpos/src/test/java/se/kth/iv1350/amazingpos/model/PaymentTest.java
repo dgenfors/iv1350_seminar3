@@ -28,6 +28,8 @@ public class PaymentTest {
     
     @AfterEach
     public void tearDown() {
+        item = null;
+        payment = null;
     }
 
     @Test

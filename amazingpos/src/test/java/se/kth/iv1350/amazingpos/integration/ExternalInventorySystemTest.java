@@ -30,18 +30,15 @@ public class ExternalInventorySystemTest {
     }
 
     @Test
-    public void testGetItemDescription() {
+    public void testGetItemEqual() {
         int itemID = 4;
         double price = 30;
         double vatRate = 0.06;
         String itemDesc = "kyckling";
         ItemDTO expResult = new ItemDTO(price, vatRate, itemDesc,itemID);
         ItemDTO result = exInSys.getItemDescription(itemID);
-        assertEquals(expResult.getPrice(), result.getPrice());
-        assertEquals(expResult.getVatRate(), result.getVatRate());
-        assertEquals(expResult.getItemDesc(), result.getItemDesc());
-         
-        
+        assertEquals(expResult.getPrice(), result.getPrice(),"Price of the item did not equal the correct amount");
+        assertEquals(expResult.getVatRate(), result.getVatRate(),"VatRate of the item did not equal the correct amount");
+        assertEquals(expResult.getItemDesc(), result.getItemDesc(),"Item description did not match the correct value"); 
     }
-    
 }
