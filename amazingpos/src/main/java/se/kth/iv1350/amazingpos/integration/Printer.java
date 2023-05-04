@@ -9,7 +9,7 @@ public class Printer {
      * Prints the receipt out to the console
      * @param receipt receipt to be printed
      */
-    public void printSale(Receipt receipt){
+    public void printReceipt(Receipt receipt){
         System.out.println(receipt.toString());
     }
 }
