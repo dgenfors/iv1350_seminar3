@@ -24,7 +24,7 @@ public class ItemManager{
   * @param itemID the itemID scanned, used to get the matching Item
   * @return
   */
- public CurItem geItem(int quantity, int itemID){
+ public CurItem geItem(int quantity, int itemID) throws InvalidItemIDException{
    ItemDTO item = exInSys.getItemDescription(itemID);
    return sale.additem(item,quantity);
  }

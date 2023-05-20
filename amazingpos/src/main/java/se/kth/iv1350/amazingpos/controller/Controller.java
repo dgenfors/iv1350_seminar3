@@ -1,12 +1,17 @@
 package se.kth.iv1350.amazingpos.controller;
 
+import java.io.IOException;
+
 import se.kth.iv1350.amazingpos.integration.AccountingSystem;
 import se.kth.iv1350.amazingpos.integration.DiscountRegister;
 import se.kth.iv1350.amazingpos.integration.ExternalInventorySystem;
+import se.kth.iv1350.amazingpos.integration.ExternalInvetoryInventoryException;
 import se.kth.iv1350.amazingpos.integration.Register;
 import se.kth.iv1350.amazingpos.model.CurItem;
+import se.kth.iv1350.amazingpos.model.InvalidItemIDException;
 import se.kth.iv1350.amazingpos.model.ItemManager;
 import se.kth.iv1350.amazingpos.model.Sale;
+import se.kth.iv1350.amazingpos.util.LogHandler;
 /**
  * Represents a controller to be used in a sale
  */
@@ -17,14 +22,17 @@ public class Controller {
     private Register register;
     private ItemManager itmMnger;
     private Sale sale;
+    private LogHandler loghandler;
     /**
      * Creates an instance of the object and its needed references.
+     * @throws IOException
      */
-    public Controller(){
+    public Controller() throws IOException{
         this.exInSys = new ExternalInventorySystem();
         this.disReg = new DiscountRegister();
         this.accSys = new AccountingSystem();
         this.register = new Register();
+        this.loghandler = new LogHandler();
     }
 
     /**
@@ -42,9 +50,16 @@ public class Controller {
      * @param itemID   the unique identifier of the item 
      * used to get the matching item
      * @return the item mathcing the ItemId and the runingTotal of the sale after returning the item
+     * @throws InvalidItemIDException
      */
-    public CurItem scanItem(int quantity, int itemID){
-        return itmMnger.geItem(quantity, itemID);
+    public CurItem scanItem(int quantity, int itemID) throws OperationErrorException, InvalidItemIDException{
+        try{
+            return itmMnger.geItem(quantity, itemID);
+        }catch(ExternalInvetoryInventoryException exInvExc){
+            loghandler.logException(exInvExc);
+            throw new OperationErrorException(exInvExc.getMessage(), exInvExc);
+        }
+        
     }
     /**
      * End the sale, this method must be called before handling payment

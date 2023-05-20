@@ -10,6 +10,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import se.kth.iv1350.amazingpos.model.InvalidItemIDException;
 import se.kth.iv1350.amazingpos.model.Sale;
 
 /**
@@ -30,7 +32,7 @@ public class ExternalInventorySystemTest {
     }
 
     @Test
-    public void testGetItemEqual() {
+    public void testGetItemEqual() throws InvalidItemIDException {
         int itemID = 4;
         double price = 30;
         double vatRate = 0.06;

@@ -3,6 +3,7 @@ package se.kth.iv1350.amazingpos.integration;
 import java.util.ArrayList;
 import java.util.List;
 
+import se.kth.iv1350.amazingpos.model.InvalidItemIDException;
 import se.kth.iv1350.amazingpos.model.Sale;
 /**
  * Represenets the external invetory system
@@ -21,13 +22,17 @@ public class ExternalInventorySystem {
      * @param itemID the ItemID used to find the matching Item
      * @return the item description of the item matching the ID
      */
-    public ItemDTO getItemDescription(int itemID){
+    public ItemDTO getItemDescription(int itemID) throws InvalidItemIDException, ExternalInvetoryInventoryException{
+        if(itemID == 7){
+            throw new ExternalInvetoryInventoryException("Database could not be called");
+        }
         for(ItemDTO item : items){
             if(item.getItemID() == itemID){
                 return item;
             }
         }
-        return null;
+       throw new InvalidItemIDException();
+
     }
     /**
      * Updates the inventory with information from the sale

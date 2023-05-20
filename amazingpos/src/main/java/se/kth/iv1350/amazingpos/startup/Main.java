@@ -1,5 +1,7 @@
 package se.kth.iv1350.amazingpos.startup;
 
+import java.io.IOException;
+
 import se.kth.iv1350.amazingpos.controller.Controller;
 import se.kth.iv1350.amazingpos.view.View;
 /**
@@ -12,8 +14,14 @@ public class Main {
      * @param args never used
      */
     public static void main(String args[]){
-        Controller contr = new Controller();
-        View view = new View(contr);
-        view.runFakeExecution();
+        Controller contr;
+        try {
+            contr = new Controller();
+            View view = new View(contr);
+            view.runFakeExecution();
+        } catch (IOException e) {
+            System.out.println("Could not start application");
+        }
+       
     }
 }
