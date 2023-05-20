@@ -4,6 +4,7 @@ package se.kth.iv1350.amazingpos.view;
 import java.io.IOException;
 
 import se.kth.iv1350.amazingpos.controller.Controller;
+import se.kth.iv1350.amazingpos.controller.OperationErrorException;
 import se.kth.iv1350.amazingpos.integration.ExternalInvetoryInventoryException;
 import se.kth.iv1350.amazingpos.model.CurItem;
 import se.kth.iv1350.amazingpos.model.InvalidItemIDException;
@@ -37,8 +38,10 @@ public class View {
                 System.out.println(scannedItem.getItemDesc()+", Pris:"+scannedItem.getItemPrice()+", totala priset:"+scannedItem.getRuningTotal());
             } catch (InvalidItemIDException e) {
                 System.out.println(e.getMessage());
-            } catch (Exception exc){
-                System.out.println(exc.getMessage());
+            } catch (OperationErrorException exc){
+                System.out.println(exc);
+            }catch (Exception e){
+                System.out.println(e);
             }
        }
      
@@ -55,8 +58,10 @@ public class View {
         contr.scanItem(3, 7);
         } catch (InvalidItemIDException e) {
             System.out.println(e.getMessage());
-        } catch (Exception exc){
+        } catch (OperationErrorException exc){
             System.out.println(exc);
+        }catch (Exception e){
+            System.out.println(e);
         }
     }
 }
