@@ -89,8 +89,10 @@ public class Sale {
         this.runingTotal +=(payment.addVatRate(item)*quantity);
     }
     private void notifyObservers(){
-        for(SaleObserver obs: saleObserver){
-            obs.newSale(runingTotal);
-        }
+//        for(SaleObserver obs: saleObserver){
+//            obs.newSale(runingTotal);
+//        }
+        
+        saleObserver.stream().forEach(obs -> obs.newSale(runingTotal));
     }
 }
