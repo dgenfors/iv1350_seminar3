@@ -1,9 +1,0 @@
-2023-05-20,14:29:18.245825900, Exception:Database could not be called ,was thrown
-se.kth.iv1350.amazingpos.integration.ExternalInvetoryInventoryException: Database could not be called
-	at se.kth.iv1350.amazingpos.integration.ExternalInventorySystem.getItemDescription(ExternalInventorySystem.java:27)
-	at se.kth.iv1350.amazingpos.model.ItemManager.geItem(ItemManager.java:28)
-	at se.kth.iv1350.amazingpos.controller.Controller.scanItem(Controller.java:57)
-	at se.kth.iv1350.amazingpos.view.View.runFakeExecution(View.java:44)
-	at se.kth.iv1350.amazingpos.startup.Main.main(Main.java:21)
-
-

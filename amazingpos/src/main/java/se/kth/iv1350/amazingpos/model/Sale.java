@@ -14,6 +14,7 @@ public class Sale {
     private double runingTotal;
     private double priceWithoutVat;
     private List<SoldItem> soldItems = new ArrayList<>();
+    private List<SaleObserver> saleObserver = new ArrayList<>();
     /**
      * Creates a instance of a sale
      */
@@ -77,10 +78,19 @@ public class Sale {
         double change = payment.calcChange(amountPaid, this.runingTotal);
         Receipt receipt = new Receipt(this, change, amountPaid);
         pntr.printReceipt(receipt);
+        notifyObservers();
         return change;
+    }
+    public void addObserver(List<SaleObserver> observers){
+        saleObserver.addAll(observers);
     }
 
     private void increaseRuningTotal(ItemDTO item, int quantity){
         this.runingTotal +=(payment.addVatRate(item)*quantity);
+    }
+    private void notifyObservers(){
+        for(SaleObserver obs: saleObserver){
+            obs.newSale(runingTotal);
+        }
     }
 }

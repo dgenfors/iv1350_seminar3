@@ -1,5 +1,7 @@
 package se.kth.iv1350.amazingpos.model;
 
+import java.util.ArrayList;
+import java.util.List;
 
 /*
  * Represents a receipt of a sale

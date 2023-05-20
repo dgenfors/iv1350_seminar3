@@ -1,6 +1,8 @@
 package se.kth.iv1350.amazingpos.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import se.kth.iv1350.amazingpos.integration.AccountingSystem;
 import se.kth.iv1350.amazingpos.integration.DiscountRegister;
@@ -11,6 +13,7 @@ import se.kth.iv1350.amazingpos.model.CurItem;
 import se.kth.iv1350.amazingpos.model.InvalidItemIDException;
 import se.kth.iv1350.amazingpos.model.ItemManager;
 import se.kth.iv1350.amazingpos.model.Sale;
+import se.kth.iv1350.amazingpos.model.SaleObserver;
 import se.kth.iv1350.amazingpos.util.LogHandler;
 /**
  * Represents a controller to be used in a sale
@@ -23,6 +26,7 @@ public class Controller {
     private ItemManager itmMnger;
     private Sale sale;
     private LogHandler loghandler;
+    private List<SaleObserver> saleObserver = new ArrayList<>();
     /**
      * Creates an instance of the object and its needed references.
      * @throws IOException
@@ -32,7 +36,7 @@ public class Controller {
         this.disReg = new DiscountRegister();
         this.accSys = new AccountingSystem();
         this.register = new Register();
-        this.loghandler = new LogHandler();
+        this.loghandler = new LogHandler("amazingpos-errorLog.txt");
     }
 
     /**
@@ -41,6 +45,7 @@ public class Controller {
     public void startSale(){
         this.sale = new Sale();
         this.itmMnger = new ItemManager(this.exInSys, this.sale);
+        sale.addObserver(saleObserver);
         
     }
     /**
@@ -77,6 +82,10 @@ public class Controller {
     public double payment(double amountPaid){
         updateExternals(amountPaid);
         return sale.pay(amountPaid);
+    }
+
+    public void addSaleObserver(SaleObserver obs){
+        saleObserver.add(obs);
     }
     private void updateExternals(double amountPaid){
         exInSys.updateInventory(sale);

@@ -8,8 +8,9 @@ import java.time.LocalTime;
 
 public class LogHandler {
     private PrintWriter file;
-    private static final String LOG_FILE_NAME = "amazingpos-log.txt";
-    public LogHandler() throws IOException{
+    private final String LOG_FILE_NAME;
+    public LogHandler(String name) throws IOException{
+        LOG_FILE_NAME = name;
         file = new PrintWriter(new FileWriter(LOG_FILE_NAME, true), true);
     }
 
@@ -22,6 +23,15 @@ public class LogHandler {
         msgBuilder.append(" ,was thrown");
         file.println(msgBuilder);
         exception.printStackTrace(file);
+        file.println("\n");
+    }
+    public void logDouble(double value){
+        StringBuilder msgBuilder = new StringBuilder();
+        msgBuilder.append(LocalDate.now());
+        msgBuilder.append(","+LocalTime.now());
+        msgBuilder.append(", Sum of Sales:");
+        msgBuilder.append(" "+value);
+        file.println(msgBuilder);
         file.println("\n");
     }
     

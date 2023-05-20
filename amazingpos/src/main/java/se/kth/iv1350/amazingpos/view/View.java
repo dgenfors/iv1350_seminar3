@@ -1,6 +1,8 @@
 package se.kth.iv1350.amazingpos.view;
 
 
+import java.io.IOException;
+
 import se.kth.iv1350.amazingpos.controller.Controller;
 import se.kth.iv1350.amazingpos.integration.ExternalInvetoryInventoryException;
 import se.kth.iv1350.amazingpos.model.CurItem;
@@ -13,16 +15,20 @@ public class View {
     /**
      * Creates an instance of the object with a reference to the controller 
      * @param contr uses the reference to control the flow of the sale.
+     * @throws IOException
      */
-    public View(Controller contr){
+    public View(Controller contr) throws IOException{
         this.contr = contr;
+        this.contr.addSaleObserver(new TotalRevenueView());
+        this.contr.addSaleObserver(new TotalRevenueFileOutput());
     }
     /**
      * Runs a fake execution of the sale
      */
     public void runFakeExecution(){
+        
+       for(int j = 0; j < 3; j++){
         contr.startSale();
-       
        for(int i = 6; i > 1; i--){
             CurItem scannedItem;
             try {
@@ -31,7 +37,7 @@ public class View {
             } catch (InvalidItemIDException e) {
                 System.out.println(e.getMessage());
             } catch (Exception exc){
-            
+                System.out.println(exc.getMessage());
             }
        }
      
@@ -39,11 +45,10 @@ public class View {
        System.out.println(totalPrice);
        double changeToGive = contr.payment(550);
        System.out.println("Change to give :"+changeToGive);
-
+    }
        try {
         contr.scanItem(3, 7);
         } catch (InvalidItemIDException e) {
-            // TODO Auto-generated catch block
             System.out.println(e.getMessage());
         } catch (Exception exc){
             System.out.println(exc.getMessage());
