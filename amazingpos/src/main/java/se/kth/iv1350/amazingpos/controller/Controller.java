@@ -55,6 +55,7 @@ public class Controller {
      * @param itemID   the unique identifier of the item 
      * used to get the matching item
      * @return the item mathcing the ItemId and the runingTotal of the sale after returning the item
+     * @throws se.kth.iv1350.amazingpos.controller.OperationErrorException
      * @throws InvalidItemIDException
      */
     public CurItem scanItem(int quantity, int itemID) throws OperationErrorException, InvalidItemIDException{
