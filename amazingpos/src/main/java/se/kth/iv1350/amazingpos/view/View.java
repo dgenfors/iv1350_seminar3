@@ -29,6 +29,7 @@ public class View {
         
        for(int j = 0; j < 3; j++){
         contr.startSale();
+        System.out.println("----------------- New Sale--------------");
        for(int i = 6; i > 1; i--){
             CurItem scannedItem;
             try {
@@ -45,13 +46,17 @@ public class View {
        System.out.println(totalPrice);
        double changeToGive = contr.payment(550);
        System.out.println("Change to give :"+changeToGive);
+       System.out.println("----------------- End Of Sale--------------");
+       System.out.println("\n");
+       
     }
        try {
+        System.out.println("Using hardcoded ID to test if exception is thrown ");
         contr.scanItem(3, 7);
         } catch (InvalidItemIDException e) {
             System.out.println(e.getMessage());
         } catch (Exception exc){
-            System.out.println(exc.getMessage());
+            System.out.println(exc);
         }
     }
 }
