@@ -54,7 +54,4 @@ public class View {
             System.out.println(exc.getMessage());
         }
     }
-
-    private void writeToLogAndUI(String uiMsg, Exception exc) {
-    }
 }
