@@ -36,7 +36,7 @@ public class ControllerTest {
 
    
     @Test
-    public void testScanItem() throws InvalidItemIDException{
+    public void testHardCodedItemIDScanItem() throws InvalidItemIDException{
         int quantity = 1;
         int itemID = 7;
         CurItem expResult = null;
@@ -48,31 +48,37 @@ public class ControllerTest {
         }
         
     }
+     @Test
+    public void testScanInvalidItemID() throws OperationErrorException{
+        int quantity = 1;
+        Integer itemID = 100;
+        CurItem expResult = null;
+        try{
+             CurItem result = cntr.scanItem(quantity, itemID);
+             fail("Could scan a invalid ItemID");
+        }catch (OperationErrorException exc){
+           fail("wrong exception was thrown"+exc);
+        }catch (InvalidItemIDException exc){
+            assertTrue(exc.getMessage().contains("Specified ItemID could not be found"),"Wrong exception message did not contain" +exc.getMessage());
+        } 
+    }
+    
+      @Test
+    public void testScanValidtemID() throws OperationErrorException{
+        int quantity = 1;
+        int itemID = 1;
+        double expResultPrice = 50;
+        String expResultDesc = "lätt mjölk";
+        try{
+             CurItem result = cntr.scanItem(quantity, itemID);
+            assertEquals(result.getItemPrice(),expResultPrice, "Faulty item Price");
+            assertEquals(result.getItemDesc(),expResultDesc, "Faulty item Description");
+        }catch (OperationErrorException exc){
+           fail("Exception was thrown on valid ItemID "+exc);
+        }catch (InvalidItemIDException exc){
+            fail("Exception was thrown on valid ItemID "+exc);
+        } 
+    }
 
-   
-    /*@Test
-    public void testEndSale() {
-        double expResult = 0.0;
-        double result = cntr.endSale();
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    @Test
-    public void testPayment() {
-        double amountPaid = 0.0;
-        double expResult = 0.0;
-        double result = cntr.payment(amountPaid);
-        assertEquals(expResult, result, 0.0);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-    @Test
-    public void testAddSaleObserver() {
-        SaleObserver obs = null;
-        cntr.addSaleObserver(obs);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }*/
     
 }
