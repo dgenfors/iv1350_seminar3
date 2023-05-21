@@ -81,6 +81,10 @@ public class Sale {
         notifyObservers();
         return change;
     }
+    /**
+     * Adds the specified observers to be notifed when the Sale is paid for.
+     * @param observers the observers to notify
+     */
     public void addObserver(List<SaleObserver> observers){
         saleObserver.addAll(observers);
     }
@@ -89,10 +93,6 @@ public class Sale {
         this.runingTotal +=(payment.addVatRate(item)*quantity);
     }
     private void notifyObservers(){
-//        for(SaleObserver obs: saleObserver){
-//            obs.newSale(runingTotal);
-//        }
-        
         saleObserver.stream().forEach(obs -> obs.newSale(runingTotal));
     }
 }
