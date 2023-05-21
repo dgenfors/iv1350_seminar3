@@ -25,10 +25,12 @@ public class LogHandler {
         exception.printStackTrace(file);
         file.println("\n");
     }
-    public void logDouble(double value){
+    public void logDouble(int amountOfSales, double value){
         StringBuilder msgBuilder = new StringBuilder();
         msgBuilder.append(LocalDate.now());
         msgBuilder.append(","+LocalTime.now());
+        msgBuilder.append(", Amount of Sales:");
+        msgBuilder.append(" "+amountOfSales);
         msgBuilder.append(", Sum of Sales:");
         msgBuilder.append(" "+value);
         file.println(msgBuilder);

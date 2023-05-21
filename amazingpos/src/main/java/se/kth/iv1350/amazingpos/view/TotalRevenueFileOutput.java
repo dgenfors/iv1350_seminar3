@@ -9,6 +9,7 @@ import se.kth.iv1350.amazingpos.util.LogHandler;
  */
 public class TotalRevenueFileOutput implements SaleObserver   {
     private double totalPrice;
+    private int amountOfSales;
     private static LogHandler loghandler;
     public TotalRevenueFileOutput() throws IOException{
          loghandler = new LogHandler("amazingpos-SaleLog.txt");
@@ -16,7 +17,7 @@ public class TotalRevenueFileOutput implements SaleObserver   {
     @Override
     public void newSale(double totalPrice){
         this.totalPrice += totalPrice;
-        loghandler.logDouble(this.totalPrice);
-        
+        amountOfSales++;
+        loghandler.logDouble(amountOfSales,this.totalPrice);
     }
 }

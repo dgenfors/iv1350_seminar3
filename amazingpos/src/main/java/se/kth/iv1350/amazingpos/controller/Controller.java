@@ -46,7 +46,6 @@ public class Controller {
         this.sale = new Sale();
         this.itmMnger = new ItemManager(this.exInSys, this.sale);
         sale.addObserver(saleObserver);
-        
     }
     /**
      * Uses the parameters to add locate the specified item and 
