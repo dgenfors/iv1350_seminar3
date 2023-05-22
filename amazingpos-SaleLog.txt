@@ -1,0 +1,9 @@
+2023-05-22,18:32:44.226897300, Amount of Sales: 1, Sum of Sales: 501.2
+
+
+2023-05-22,18:32:44.228897900, Amount of Sales: 2, Sum of Sales: 1002.4
+
+
+2023-05-22,18:32:44.231900100, Amount of Sales: 3, Sum of Sales: 1503.6
+
+
